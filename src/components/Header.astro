@@ -1,0 +1,80 @@
+---
+const links = [
+    { name: "Excursiones", href: "/excursiones" },
+    { name: "Medios de comunicación", href: "/medios" },
+    { name: "Sobre nosotros", href: "/nosotros" },
+    { name: "Comercio", href: "/comercio" },
+    { name: "Contáctenos", href: "/contacto" },
+];
+---
+
+<header class="fixed top-0 w-full" >
+    <div class="top-bar flex items-center">
+        <div
+            class="text-blanco-grisaceo py-2 px-32 flex justify-start items-center w-1/2"
+        >
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center space-x-2"
+                    ><span>1-888-990-5552</span></span
+                >
+                <span class="flex items-center space-x-2"
+                    ><span>info@pajarerosenruta.com</span></span
+                >
+            </div>
+        </div>
+
+        <div
+            class="text-blanco-grisaceo py-2 px-32 flex justify-end items-center w-1/2"
+        >
+            <div class="flex items-center space-x-4">
+                <a href="" class="flex items-center space-x-2"
+                    ><img src="/images/ig.png" alt="Logo IG" class="h-6" /></a
+                >
+                <a href="" class="flex items-center space-x-2"
+                    ><img src="/images/fb.png" alt="Logo FB" class="h-6" /></a
+                >
+                <a href="" class="flex items-center space-x-2"
+                    ><img src="/images/yt.png" alt="Logo YT" class="h-6" /></a
+                >
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra principal -->
+    <div
+        class="bg-verde-oscuro text-blanco-grisaceo shadow-md py-4 px-6 flex justify-evenly items-center h-32 nav-bar"
+        id="navBar"
+    >
+        <a href="/" class="text-2xl font-bold flex items-center">
+            <img src="/images/logo-verde.png" alt="Logo" class="h-28" />
+
+            <!-- <span class="ml-2">Pajareros en Ruta</span> -->
+        </a>
+
+        <nav class="hidden md:flex space-x-6">
+            {
+                links.map((link) => (
+                    <a href={link.href} class="hover:text-verde-medio">
+                        {link.name}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <button
+                class="flex items-center space-x-1 bg-verde-medio text-white px-4 py-2 rounded-lg hover:bg-verde-claro"
+            >
+                <span>Pregunta</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<style>
+
+    .top-bar {
+        background: linear-gradient(to right, #7b4a28, #a56b3c);
+    }
+
+</style>
